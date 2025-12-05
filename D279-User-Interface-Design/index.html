@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradigm Pet Professionals</title>
+    <link rel="stylesheet" href="D279.css">
+    <script src="https://kit.fontawesome.com/637d084766.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="images/ppplogo.png" alt="Paradigm Pet Professionals logo" class="logo">
+            </a>
+            
+            <nav>
+                <!--Home-->
+                <a href="index.html" class="active">Home</a>
+               
+
+                <div class="secondary">
+                    
+                    <!-- Pet Care -->
+                    <a href="petcare.html" class="dropbtn">Pet Care</a>
+
+                    <!-- Arrow toggler (mobile only) -->
+                    <span class="dropdown-arrow" id="petcare-arrow">&#9662;</span>
+
+                    <div class="secondary-content">
+
+                        <!--Cats-->
+                        <div>
+                            <a href="cats.html" class="secondary-link">Cats</a>
+                            <div class="subtopics">
+                                <span>Zero to Four Weeks</span>
+                                <span>Four Weeks to One Year</span>
+                                <span>One Year to Seven Years</span>
+                                <span>Seven Years and More</span>
+                            </div>
+                        </div>
+                        
+                        <!--Dogs-->
+                        <div>
+                            <a href="dogs.html" class="secondary-link">Dogs</a>
+                            <div class="subtopics">
+                                <span>Diet & Exercise</span>
+                                <span>Grooming & Handling</span>
+                                <span>Vaccinations & Medications</span>
+                            </div>
+                        </div>
+
+                        <!--Small Animals-->
+                        <div>
+                            <a href="smallanimals.html" class="secondary-link">Small Animals</a>
+                            <div class="subtopics">
+                                <span>Essential Supplies</span>
+                                <span>Resources</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Contact-->
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <!--Search-->
+            <div class="search">
+                <input type="text" id="search" placeholder="Search">
+                <button type="submit" id="searchbutton">Search</button>
+            </div>
+        </div>  
+
+        <section class="slogan">
+            <h1>Paradigm Pet Professionals</h1>
+            <h2>Evidence-based pet care advice for every pet lover</h2>
+        </section>      
+    </header>
+
+    <!-- ⭐ UNIFIED SCRIPT — Desktop hover + mobile toggle without breaking click navigation -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const dropdown = document.querySelector(".dropbtn");
+        const arrow = document.getElementById("petcare-arrow");
+        const menu = document.querySelector(".secondary-content");
+
+        // Detect mobile layout
+        const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
+
+        /* ---------------------------
+           MOBILE BEHAVIOR (<=900px)
+           --------------------------- */
+        if (arrow) {
+            arrow.addEventListener("click", (e) => {
+                if (isMobile()) {
+                    e.stopPropagation();
+                    menu.classList.toggle("show");
+                }
+            });
+        }
+
+        /* ---------------------------
+           DESKTOP BEHAVIOR (>900px)
+           Clicking "Pet Care" ALWAYS navigates.
+           --------------------------- */
+        dropdown.addEventListener("click", (e) => {
+            if (isMobile()) {
+                menu.classList.remove("show");
+            }
+        });
+
+        /* ---------------------------
+           Click outside closes menu
+           --------------------------- */
+        document.addEventListener("click", (e) => {
+            if (!menu.contains(e.target) && 
+                e.target !== arrow && 
+                e.target !== dropdown) {
+                menu.classList.remove("show");
+            }
+        });
+    });
+    </script>
+
+    
+    <div class="content-wrapper">
+
+        <main class="maincontent">
+            <!--About & Resources section-->
+            
+            <h3>Welcome to Paradigm Pet Professionals!</h3>
+            <p>
+                Pets are nature's gift to humanity. It has been scientifically proven that opening our homes and hearts to a pet increases our longevity and improves our overall quality of life as well as the lives of our pets. At Pet Paradigm Professionals, our mission is to offer resources to help you care for your furry, scaly, feathery, and slimy loved ones. 
+            </p>
+            <p>
+                Our pet experts—or “Pexperts”—have been working with pet owners and professionals alike for the past twelve years. They offer one-on-one consultations with current and prospective pet owners as well as group presentations designed for veterinary, pet shelter, and pet breeding professionals.
+            </p>
+            <p>
+                Looking for basic pet care advice for the most common type of pets? Need additional help determining which type of pet is right for you and your family? We will work with you and provide tailored evidence-based pet care to ensure lifelong health and wellness of your new companion.
+            </p>
+
+            <br>
+
+            <h3>Looking for your new best friend?</h3>
+            <p>
+                The following organizations can help you find and adopt the perfect companion:   
+            </p>
+            <ul>
+                <li><a href="https://bestfriends.org/pet-care-resources/issues/pet-adoption-resources" target="_blank">General Pet Resources</a></li>
+                <li><a href="https://www.aspca.org/" target="_blank">ASPCA</a></li>
+                <li><a href="https://www.sterlingshelter.org/humane-society/koi-fish-rescue/" target="_blank">Fish Rescue</a></li>
+                <li><a href="https://savethesnakes.org/snakerescuecall/" target="_blank">Snake Rescue</a></li>
+                <li><a href="https://ftlob.rescuegroups.org/" target="_blank">Bird Rescue</a></li>
+            </ul>
+        </main>
+
+        <aside class="sidebar">
+            <!--Services: virtual consultations and presentations, one-on-one consultations concerning individual pets, group presentations regarding general pet care (can be tailored to the needs of the group)-->
+
+            <h3>Services</h3>
+
+            <div class="service-image" data-title="Virtual Services" data-hover="Live consultations and presentations from anywhere">
+                <img src="images/consult.jpeg" alt="virtual services">
+            </div>
+
+            <div class="service-image" data-title="1-on-1 Consultations" data-hover="One-on-one guidance to meet your pet’s unique needs">
+                <img src="images/cat2.jpeg" alt="new pet consultation">
+            </div>
+
+            <div class="service-image" data-title="Group Presentations" data-hover="Customizable workshops for organizations, clubs, or teams">
+                <img src="images/meeting.jpeg" alt="group pet care presentation">
+            </div>
+
+            <script>
+                document.querySelectorAll('.service-image').forEach(img => {
+                    img.addEventListener('click', () => {
+                        img.classList.toggle('hover'); // toggle a class to simulate hover
+                    });
+                });
+            </script>        
+        </aside>
+
+    </div>
+
+
+    <aside class="bottombar">
+        <!--Constulation section with call to action button-->
+        <h3>We are also happy to help you navigate the adoption process!</h3>
+        <p>
+            We will guide you through each step in the process from determining which type of pet is best suited for your family and home environment, to completing the necessary paperwork, to bringing your new loved one home. Please fill out our contact form to request a consultation. We will contact you within 48 hours to schedule a consultation.
+        </p>
+
+        <a href="contact.html" class="cta-button">Schedule a Consultation</a>
+
+    </aside>
+    
+    <footer>
+        @2025 Paradigm Pet Professionals. All Rights Reserved.
+        <nav>
+            <a href="https://www.facebook.com/">
+                <i class="fa-brands fa-facebook"></i>    
+            </a>
+            
+            <a href="https://www.instagram.com/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            
+            <a href="https://x.com/">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+        </nav>
+    </footer>
+</body>
+</html>

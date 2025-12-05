@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradigm Pet Professionals</title>
+    <link rel="stylesheet" href="D279.css">
+    <script src="https://kit.fontawesome.com/637d084766.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="images/ppplogo.png" alt="Paradigm Pet Professionals logo" class="logo">
+            </a>
+            
+            <nav>
+                <!--Home-->
+                <a href="index.html">Home</a>
+               
+
+                <div class="secondary">
+                    
+                    <!-- Pet Care -->
+                    <a href="petcare.html" class="dropbtn active">Pet Care</a>
+
+                    <!-- Arrow toggler (mobile only) -->
+                    <span class="dropdown-arrow" id="petcare-arrow">&#9662;</span>
+
+                    <div class="secondary-content">
+
+                        <!--Cats-->
+                        <div>
+                            <a href="cats.html" class="secondary-link">Cats</a>
+                            <div class="subtopics">
+                                <span>Zero to Four Weeks</span>
+                                <span>Four Weeks to One Year</span>
+                                <span>One Year to Seven Years</span>
+                                <span>Seven Years and More</span>
+                            </div>
+                        </div>
+                        
+                        <!--Dogs-->
+                        <div>
+                            <a href="dogs.html" class="secondary-link">Dogs</a>
+                            <div class="subtopics">
+                                <span>Diet & Exercise</span>
+                                <span>Grooming & Handling</span>
+                                <span>Vaccinations & Medications</span>
+                            </div>
+                        </div>
+
+                        <!--Small Animals-->
+                        <div>
+                            <a href="smallanimals.html" class="secondary-link">Small Animals</a>
+                            <div class="subtopics">
+                                <span>Essential Supplies</span>
+                                <span>Resources</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Contact-->
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <!--Search-->
+            <div class="search">
+                <input type="text" id="search" placeholder="Search">
+                <button type="submit" id="searchbutton">Search</button>
+            </div>
+        </div>       
+      
+    </header>
+
+    <!-- ⭐ UNIFIED SCRIPT — Desktop hover + mobile toggle without breaking click navigation -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const dropdown = document.querySelector(".dropbtn");
+        const arrow = document.getElementById("petcare-arrow");
+        const menu = document.querySelector(".secondary-content");
+
+        // Detect mobile layout
+        const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
+
+        /* ---------------------------
+           MOBILE BEHAVIOR (<=900px)
+           --------------------------- */
+        if (arrow) {
+            arrow.addEventListener("click", (e) => {
+                if (isMobile()) {
+                    e.stopPropagation();
+                    menu.classList.toggle("show");
+                }
+            });
+        }
+
+        /* ---------------------------
+           DESKTOP BEHAVIOR (>900px)
+           Clicking "Pet Care" ALWAYS navigates.
+           --------------------------- */
+        dropdown.addEventListener("click", (e) => {
+            if (isMobile()) {
+                menu.classList.remove("show");
+            }
+        });
+
+        /* ---------------------------
+           Click outside closes menu
+           --------------------------- */
+        document.addEventListener("click", (e) => {
+            if (!menu.contains(e.target) && 
+                e.target !== arrow && 
+                e.target !== dropdown) {
+                menu.classList.remove("show");
+            }
+        });
+    });
+    </script>
+
+    <div class="content-wrapper">
+
+        <main class="petinfo-page">
+
+            <h1>Small Animals</h1>
+            <h3>Overview</h3>
+            <p>
+                Sometimes we want a pet in our life but think it’s impossible because we are not home enough to take care of it, or we don’t have enough room. Consider adopting a small animal such as a hermit crab, mouse, gerbil, hamster, guinea pig, or even a chinchilla!
+            </p>
+
+            <p>
+                Depending on which type of animal you adopt, you can provide a comfortable environment using anything from small to large cages or glass aquariums. You will also need to provide amenities for your new pet, such as bedding or substrate, toys, an exercise wheel, a water dish or drip bottle, a food dish, and grooming equipment.
+            </p>
+
+            <p>
+                You also need to consider if your new pet will need a friend or if it will be happy living alone. Our “Pexperts” are here to help you decide which pet is right for you and how to provide them with a happy home. Schedule a consultation with us today!
+            </p>
+
+            <br>
+
+            <h3>Here are some resources to get you started:</h3>
+
+            <ul>
+                <li><a href="https://www.animalhumanesociety.org/adoption/guinea-pig-care" target="_blank">Guinea Pig Care</a></li>
+                <li><a href="https://www.bluecross.org.uk/pet-advice/caring-your-mouse" target="_blank">Mouse Care</a></li>
+                <li><a href="https://pethermitcrabs.org/cage-habitat/" target="_blank">Hermit Crab Care</a></li>
+                <li><a href="https://chinchillacare.org/cage-habitat/" target="_blank">Chinchilla Care</a></li>
+                <li><a href="https://petgerbils.org/cage-habitat/" target="_blank">Gerbil Care</a></li>
+                <li><a href="https://www.pdsa.org.uk/taking-care-of-your-pet/looking-after-your-pet/small-pets/the-ideal-home-for-your-hamster" target="_blank">Hamster Care</a></li>
+            </ul>
+
+        </main>
+
+    </div>
+
+
+    <aside class="bottombar">
+        <!--Constulation section with call to action button-->
+        <h3>We are also happy to help you navigate the adoption process!</h3>
+        <p>
+            We will guide you through each step in the process from determining which type of pet is best suited for your family and home environment, to completing the necessary paperwork, to bringing your new loved one home. Please fill out our contact form to request a consultation. We will contact you within 48 hours to schedule a consultation.
+        </p>
+
+        <a href="contact.html" class="cta-button">Schedule a Consultation</a>
+
+    </aside>
+    
+    <footer>
+        @2025 Paradigm Pet Professionals. All Rights Reserved.
+        <nav>
+            <a href="https://www.facebook.com/">
+                <i class="fa-brands fa-facebook"></i>    
+            </a>
+            
+            <a href="https://www.instagram.com/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            
+            <a href="https://x.com/">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+        </nav>
+    </footer>
+</body>
+</html>

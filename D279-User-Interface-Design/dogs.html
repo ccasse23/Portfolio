@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradigm Pet Professionals</title>
+    <link rel="stylesheet" href="D279.css">
+    <script src="https://kit.fontawesome.com/637d084766.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="images/ppplogo.png" alt="Paradigm Pet Professionals logo" class="logo">
+            </a>
+            
+            <nav>
+                <!--Home-->
+                <a href="index.html">Home</a>
+               
+
+                <div class="secondary">
+                    
+                    <!-- Pet Care -->
+                    <a href="petcare.html" class="dropbtn active">Pet Care</a>
+
+                    <!-- Arrow toggler (mobile only) -->
+                    <span class="dropdown-arrow" id="petcare-arrow">&#9662;</span>
+
+                    <div class="secondary-content">
+
+                        <!--Cats-->
+                        <div>
+                            <a href="cats.html" class="secondary-link">Cats</a>
+                            <div class="subtopics">
+                                <span>Zero to Four Weeks</span>
+                                <span>Four Weeks to One Year</span>
+                                <span>One Year to Seven Years</span>
+                                <span>Seven Years and More</span>
+                            </div>
+                        </div>
+                        
+                        <!--Dogs-->
+                        <div>
+                            <a href="dogs.html" class="secondary-link">Dogs</a>
+                            <div class="subtopics">
+                                <span>Diet & Exercise</span>
+                                <span>Grooming & Handling</span>
+                                <span>Vaccinations & Medications</span>
+                            </div>
+                        </div>
+
+                        <!--Small Animals-->
+                        <div>
+                            <a href="smallanimals.html" class="secondary-link">Small Animals</a>
+                            <div class="subtopics">
+                                <span>Essential Supplies</span>
+                                <span>Resources</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Contact-->
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <!--Search-->
+            <div class="search">
+                <input type="text" id="search" placeholder="Search">
+                <button type="submit" id="searchbutton">Search</button>
+            </div>
+        </div>       
+      
+    </header>
+
+    <!-- ⭐ UNIFIED SCRIPT — Desktop hover + mobile toggle without breaking click navigation -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const dropdown = document.querySelector(".dropbtn");
+        const arrow = document.getElementById("petcare-arrow");
+        const menu = document.querySelector(".secondary-content");
+
+        // Detect mobile layout
+        const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
+
+        /* ---------------------------
+           MOBILE BEHAVIOR (<=900px)
+           --------------------------- */
+        if (arrow) {
+            arrow.addEventListener("click", (e) => {
+                if (isMobile()) {
+                    e.stopPropagation();
+                    menu.classList.toggle("show");
+                }
+            });
+        }
+
+        /* ---------------------------
+           DESKTOP BEHAVIOR (>900px)
+           Clicking "Pet Care" ALWAYS navigates.
+           --------------------------- */
+        dropdown.addEventListener("click", (e) => {
+            if (isMobile()) {
+                menu.classList.remove("show");
+            }
+        });
+
+        /* ---------------------------
+           Click outside closes menu
+           --------------------------- */
+        document.addEventListener("click", (e) => {
+            if (!menu.contains(e.target) && 
+                e.target !== arrow && 
+                e.target !== dropdown) {
+                menu.classList.remove("show");
+            }
+        });
+    });
+    </script>
+
+    <div class="content-wrapper">
+
+        <main class="petinfo-page">
+
+            <h1>Dogs</h1>
+            <h3>Overview</h3>
+            <p>
+                The domestic dog is an extremely social animal and offers a diverse variety of choices as there are well over 300 breeds recognized by the World Canine Organization. Adopting a dog offers mutual benefits between dog and owner. Many studies cite the social benefits of having a companion as well as the reduced feelings of loneliness from adopting a dog. Studies even show medical indicators such as <a style="text-decoration: underline;" href="https://www.ahajournals.org/doi/10.1161/CIRCOUTCOMES.119.005554" target="_blank">reduced blood pressure and improved lipid profiles</a>. 
+                If you have a dog, it is important to make sure that you care for your dog; be mindful of what you feed your dog and provide enough opportunities for exercise. In this page, you will find more information about how to care for your pets throughout the various stages of their lives.
+            </p>
+
+            <br>
+
+            <h3>Diet & Exercise</h3>
+            <p>
+                Throughout dogs’ lifespans, they should generally be fed fewer meals as they mature. Puppies should be nursed the first two months, then introduced to three meals per day when they are about three to six months years old. Their food intake should be reduced to two meals per day when they are six months to one year old and finally reduced to one meal after they reach one year old. And a dog’s typical body mass is composed of somewhere between 60 and 70 percent water. The <a style="text-decoration: underline;" href="https://www.aspca.org/pet-care/dog-care/dog-nutrition-tips" target="_blank">ASPCA</a> says just a 10 percent decrease in body water can cause illness, and a 15 percent loss can cause death, so make sure you keep your pooch hydrated!
+            </p>
+
+            <br>
+
+            <h3>Grooming & Handling</h3>
+            <p>
+                Keeping your furry family member clean is important to its health. So be sure to brush frequently to reduce the amount of shedding and prevent matted and tangled fur that can prove to be extremely difficult to remove. Check for insects such as ticks and fleas, especially after visiting heavily wooded areas. Bathing is not only important to your dog’s health but can be an exercise depending on how strong willed the dog is. Rinse <i><b>all</b></i> of the soap out, as any residual soap can result in a rash. Be sure the soap is formulated for your puppy or dog, since harsh soaps can cause allergic reactions. And as always, be careful how you handle your loved one. No matter the size of your dog, you need to be cautious as you carry your canine. If you have a small dog, then cradle the pup with one hand under the chest and the forearm supporting the back half. If it is a large dog, reach under the belly with both your arms perpendicular to the dog, and use each arm to support the chest and rear as you lift.
+
+            <br>
+
+            <h3>Vaccinations & Medication</h3>
+            <p>
+                You should always consult with your veterinarian, but there is a core set of vaccines that are typically recommended. Vaccines that reduce the exposure risk to things such as hepatitis, rabies, and parvovirus. Others may be determined by your vet depending on the environment in which the dog resides. Some of these include <a style="text-decoration: underline;" href="https://www.aspca.org/pet-care/general-pet-care/vaccinations-your-pet" target="_blank">Bordetella bronchiseptica, Borrelia burgdorferi, and Leptospira bacteria</a>.
+            </p>
+
+        </main>
+
+    </div>
+
+
+    <aside class="bottombar">
+        <!--Constulation section with call to action button-->
+        <h3>We are also happy to help you navigate the adoption process!</h3>
+        <p>
+            We will guide you through each step in the process from determining which type of pet is best suited for your family and home environment, to completing the necessary paperwork, to bringing your new loved one home. Please fill out our contact form to request a consultation. We will contact you within 48 hours to schedule a consultation.
+        </p>
+
+        <a href="contact.html" class="cta-button">Schedule a Consultation</a>
+
+    </aside>
+    
+    <footer>
+        @2025 Paradigm Pet Professionals. All Rights Reserved.
+        <nav>
+            <a href="https://www.facebook.com/">
+                <i class="fa-brands fa-facebook"></i>    
+            </a>
+            
+            <a href="https://www.instagram.com/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            
+            <a href="https://x.com/">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+        </nav>
+    </footer>
+</body>
+</html>
