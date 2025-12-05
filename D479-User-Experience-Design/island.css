@@ -1,0 +1,911 @@
+/* =======================
+   GENERAL
+========================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    color: #42332D;
+}
+
+/* Links */
+a {
+    color: #42332D;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #EF6E00;
+}
+
+
+/* =======================
+    HEADER & NAVIGATION
+========================== */
+header {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.titlebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+    height: 40px;
+    background-color: #68D6CC;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+#language {
+    margin-left: 12px;
+    background-color: #68D6CC;
+    height: 40px;
+    border: none;
+}
+
+#language:hover {
+    background-color: #42332D;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.search {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search input {
+    max-width: 125px;
+    margin-top: 0;
+    padding: 4px 10px;
+    border-radius: 10px;
+    border: 1px solid #E6DFDF;
+    font-size: 1rem;    
+}
+
+.search input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.search button {
+  padding: 6px 10px;
+  background-color: #E6DFDF;
+  border: none;
+  color: #42332D;
+  font-weight: regular;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: #F6F6F6;
+  transform: scale(1.05);
+}
+
+.topnav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    height: 60px;
+    background-color: #F6F6F6;
+    width: 100%;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.leftnav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.leftnav a {
+    padding: 0 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    width: 125px;
+    justify-content: center;
+}
+
+.leftnav a:hover {
+    background-color: #E6DFDF;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta {
+  padding: 6px 22px;
+  background-color: #42332D;
+  border: none;
+  color: #fff;
+  font-weight: regular;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.cta:hover {
+    color: #fff;
+    background-color: #EF6E00;
+}
+
+
+.dropmenu {
+    position: relative;
+    display: inline-block;
+    gap: 0;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dropbtn {                                          
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    width: 100px;
+    justify-content: center;
+    color: #42332D;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #E6DFDF;
+    transition: background-color 0.3s;
+}
+
+.dropcontent {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    width: 125px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 100;
+    gap: 30px;
+    padding: 15px;
+}
+
+.dropmenu.active .dropcontent {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    font-weight: bold;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.slogan {
+    position: relative;
+    width: 100vw;
+    height: 725px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    color: #fff;
+    margin-top: 60px; /* adjust to account for fixed header */
+    overflow: hidden;
+}
+
+.sloganvideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.slogan h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 12rem;
+    margin-top: 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.slogan h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+    font-style: italic;
+    margin-top: 200px;
+    text-transform: lowercase;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+    display: none; /* hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 100%;
+    background-color: #42332D;
+    border-radius: 2px;
+}
+
+/* =======================
+    ASIDE
+========================== */
+aside {
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    text-align: center;
+    justify-content: center;
+    gap: 15px; 
+    padding: 20px 15px 0;   
+}
+
+.asideimage {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.asideimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.asideimage::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.3);
+    z-index: 1;
+    transition: background-color 0.4s ease;
+}
+
+.asideimage::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  width: 90%;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  transition: opacity 0.3s ease, transform 0.3s ease, content 0.4s ease;
+}
+
+aside a:hover {
+    transform: scale(1.02);
+}
+
+.asideimage:hover img {
+    transform: scale(1.1);
+}
+
+/* =======================
+    MAIN
+========================== */
+.indexmain {
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    text-align: center;
+    padding: 20px 30px 20px 270px; /* top right bottom left */
+    gap: 40px;
+}
+
+.indexmain h3 {
+    color: #EF6E00;
+    font-family: "Playfair Display", serif;
+    text-transform: lowercase;
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: right;
+    max-width: 30vw;
+}
+
+.indexmain p {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    max-width: 30vw;
+}
+
+.decorativeimg {
+    display: block;
+    width: 100vw;
+    max-width: 100vw;
+    height: 400px;
+    padding: 0;
+    margin: 0;
+    position:relative;
+}
+
+/* =======================
+    FOOTER - sitemap, socials
+========================== */
+footer {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+footer nav a:hover {
+    color: #EF6E00;
+    transition: background-color 0.3s;
+}
+
+.footermap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 300px;
+    background-color: #A9E8DE;    
+    gap: 30px;
+}
+
+.maplinks {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50vw;
+    gap: 75px;
+    font-size: large;
+}
+
+.maplinks h4 {
+    margin: 0 0 10px;
+    font-size: larger;
+}
+
+.leftsubtopic {
+    display: flex;
+    flex-direction: column;
+}
+
+.rightsubtopic {
+    display: flex;
+    flex-direction: column;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: #42332D;
+    color: #fff;
+    text-align: center;
+}
+
+.socials a {
+    color: #fff;  
+}
+
+.references a:hover {
+    color: #EF6E00;
+}
+
+
+/* =======================
+    ACCOUNT PAGES - SIGNUP, LOGIN, PASSWORD
+========================== */
+.accountmain {
+    min-height: calc(100vh - 200px); /* keeps it vertically centered visually */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    color: #42332D;
+}
+
+.accountform {        /* figure out how to center on the page */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.accountform a {
+    color: #a9a9a9;
+}
+
+.accountform a:hover {
+    color: black;
+}
+
+form {
+    max-width: 500px;
+    width: 100%;
+    margin: 25px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    color: #a9a9a9;
+    margin-bottom: 1px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="password"] {
+    padding: 19px 20px;
+    border-radius: 30px;
+    background-color: #E6DFDF;
+    border: 1px solid #E6DFDF;
+    font-size: 1rem;
+    width: 90%;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="date"]:focus,
+form input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.submit-button input[type="submit"] {
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 15px 130px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button input[type="submit"]:hover {
+    background-color: #EF6E00;
+    transform: scale(1.05);
+}
+
+.accountform h3 {
+    font-weight: bolder;
+    padding: 0;
+    margin: 10px;
+    font-size: 3.3rem;
+    width: 450px;
+    text-align: center;
+}
+
+.accountform h4 {
+    font-weight: 100;
+    padding: 0;
+    margin: 10px;
+    font-size: 1rem;
+    width: 300px;
+    text-align: center;
+}
+
+/* Only show red borders after the user tries to submit */
+form.submitted input:invalid {
+    border: 2px solid #EF6E00;
+}
+
+/* Keep smooth transition for focus/border changes */
+form input {
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Password reset message */
+#email-confirmation {
+    color: green;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+
+/* =======================
+    PLANNING & ACTIVITES PAGES
+========================== */
+.favoritesmain {
+    padding: 40px 0;
+}
+
+.favoritesmain h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.favoritesmain h3 {
+    text-align: left;
+    font-size: 1.4rem;
+    padding: 20px;
+}
+
+.favoritesmain p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.favoritescontent {
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    text-align: center;
+    justify-content: center;
+    gap: 15px; 
+    padding: 20px 15px 20px;   
+}
+
+.favoritescontent a:hover {
+    transform: scale(1.02);
+}
+
+.favorite-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: #fff; /* default unhearted = white */
+    z-index: 5;
+    transition: color 0.3s, text-shadow 0.3s;
+    cursor: pointer;
+    text-shadow: 
+        0 0 3px rgba(0,0,0,0.7),
+        0 0 5px rgba(0,0,0,0.5);
+}
+
+.favorite-icon.hearted {
+    color: #ff5100; /* toggled state */
+    text-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+
+section {
+    scroll-margin-top: 175px;
+}
+
+
+/* =======================
+   RESPONSIVE FIXES
+========================== */
+
+/* DESKTOP HOVER DROPDOWNS */
+@media (hover: hover) and (pointer: fine) {
+  .dropmenu:hover .dropcontent {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    font-weight: bold;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1024px) {
+
+    .indexmain {
+        padding: 40px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .indexmain h3,
+    .indexmain p {
+        max-width: 80vw;
+        text-align: center;
+    }
+
+    aside,
+    .favoritescontent {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 20px 10px 0;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    aside a,
+    .favoritescontent a {
+        flex-shrink: 0;
+        display: block;
+        width: 300px;
+    }
+
+    .asideimage {
+        width: 100%;
+        max-width: 300px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 788px) and (min-width: 601px) {
+    .topnav {
+        flex-wrap: nowrap; /* prevent wrapping */
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .leftnav {
+        flex: 1 1 auto;       /* allow shrinking */
+        justify-content: flex-end;
+        gap: 8px;             /* reduce spacing */
+    }
+
+    .leftnav a, .dropmenu {
+        width: auto;          /* remove forced width */
+        padding: 0 5px;
+        font-size: 0.9rem;    /* slightly smaller text */
+    }
+
+    .cta {
+        padding: 5px 15px;    /* shrink button slightly */
+        font-size: 0.9rem;
+    }
+
+    .slogan {
+        height: 500px; /* shrink hero height */
+    }
+
+    .sloganvideo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* show entire video without cutting sides */
+    }
+
+    .slogan h1 {
+        font-size: 8rem; /* scale down for smaller height */
+    }
+
+    .slogan h2 {
+        font-size: 2.5rem;
+        margin-top: 100px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .topnav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 15px 0;
+        gap: 12px;
+    }
+
+    .logo {
+        height: 45px;
+    }
+
+    .leftnav {
+        flex-direction: column;
+        margin-left: 0;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .leftnav a,
+    .dropbtn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .topnav .cta {
+        margin-top: 10px;
+    }
+
+    .slogan h1 {
+        font-size: 4rem;
+    }
+
+    .slogan h2 {
+        font-size: 1.5rem;
+        margin-top: 100px;
+    }
+
+    aside,
+    .favoritescontent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .asideimage {
+        max-width: 100%;
+        height: 220px;
+    }
+
+    .decorativeimg {
+        height: 220px;
+    }
+
+    .footermap {
+        height: auto;
+        padding-bottom: 25px;
+    }
+
+    .footermap .cta {
+        margin-top: 10px;
+    }
+
+    .maplinks {
+        width: 90vw;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .socials {
+        padding: 15px 20px;
+        margin-top: 0;
+        clear: both;
+        line-height: 1.6;
+        font-size: 0.9rem;
+        white-space: normal;
+    }
+
+    .socials nav {
+        margin-top: 10px;
+        display: flex;
+        gap: 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }    
+
+    .leftnav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #F6F6F6;
+        position: absolute;
+        top: 120px;
+        left: 0;
+        padding-bottom: 15px;
+        z-index: 1001;
+    }
+
+    .leftnav.show {
+        display: flex;
+    }
+
+    .leftnav a,
+    .dropbtn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .accountmain {
+        padding: 40px 15px;   /* shrink side padding */
+        display: flex;
+        justify-content: center;
+    }
+
+    .accountform {
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    form {
+        width: 100%;
+        max-width: 360px;
+        padding: 20px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="date"],
+    form input[type="password"] {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    form label {
+        margin-left: 0;
+    }
+
+    .submit-button input[type="submit"] {
+        padding: 15px 30px; /* prevents button overflow */
+        width: 100%;
+    }
+
+    .accountform h3,
+    .accountform h4 {
+        width: 100%;
+    }
+}
