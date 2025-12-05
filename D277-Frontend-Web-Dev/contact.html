@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Louisiana</title>
+    <link rel="stylesheet" href="task2D277.css">
+</head>
+
+<body id="home">
+    <nav id="top">
+        <img src="images/seal.png" alt="Louisiana Seal" class="seal">
+        <a href="index.html">Home</a> |
+        <a href="batonrouge.html">Baton Rouge</a> |
+        <a href="neworleans.html">New Orleans</a> |
+        <a href="lafayette.html">Lafayette</a>
+    </nav>
+
+    <header>
+         <div class="banner louisiana">
+            <h1>Contact Us</h1>            
+         </div>
+    </header>
+
+    <section>
+        <h2 class="form-heading">We'd Love to Hear From You!</h2>
+        <p class="form-heading">
+            Please fill out the form below to ask a question or share feedback.
+        </p>
+            
+        <form action="#" method="post" id="contactForm">
+            <label for="fname">First Name:</label><br>
+            <input type="text" id="fname" name="fname" required>
+
+            <label for="lname">Last Name:</label><br>
+            <input type="text" id="lname" name="lname" required>
+
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required>
+
+            <label for="confirmEmail">Confirm Email Address:</label><br>
+            <input type="email" id="confirmEmail" name="confirmEmail" required>
+
+            <label for="question">Your Question:</label><br>
+            <textarea id="question" name="question" rows="5" cols="40" placeholder="Type your question here..."></textarea>
+
+            <div class="submit-button">
+                <input type="submit" value="Submit">    
+            </div>
+            
+        </form>
+    </section>
+
+    <aside>
+        <small>
+            <h3 class="aside-title">References</h3>
+            <ul>
+                <li>United States Census Bureau. "City and Town Population Totals: 2020-2024." Accessed October 2025. <a href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html" target="_blank">https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html</a></li>
+                <li>City of Baton Rouge. "A Brief History." Accessed October 2025. <a href="https://www.brla.gov/841/A-Brief-History" target="_blank">https://www.brla.gov/841/A-Brief-History</a></li>
+                <li>Pixabay. "Louisiana Images." Accessed October 2025. <a href="https://pixabay.com/" target="_blank">https://pixabay.com/</a></li>
+            </ul>
+        </small>        
+    </aside>
+
+    <footer>
+         <nav>
+            <a href="index.html">Home</a> |
+            <a href="batonrouge.html">Baton Rouge</a> |
+            <a href="neworleans.html">New Orleans</a> |
+            <a href="lafayette.html">Lafayette</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="#top">Back to Top</a>             
+         </nav>
+
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const email = document.getElementById('email').value;
+            const confirmEmail = document.getElementById('confirmEmail').value;
+            if (email !== confirmEmail) {
+            alert("Email addresses do not match!");
+            e.preventDefault();
+            }
+            });
+        </script>      
+    </footer>
+</body>
+</html>

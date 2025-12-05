@@ -1,0 +1,287 @@
+/* GENERAL */
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #EBD1A7;
+  color: #442D1C;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+ul li {
+  list-style-type: none;
+  padding-bottom: 7px;
+}
+
+ol li {
+  padding-bottom: 7px;
+  margin-left: 10px;
+}
+
+h2, h3 {
+  margin-bottom: 8px;
+}
+
+a {
+  color: #9D9167;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #84592B;
+}
+
+/* MISC */
+
+.seal {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  width: 38px;
+  height: auto;
+}
+
+.imageA {
+  float: left;
+  margin: 5px 20px 15px 0;
+  width: 250px;
+  height: auto;
+  max-height: 300px;
+  border-radius: 4px;
+}
+
+.imageB {
+  float: top;
+  margin: 10px 0 10px 20px;
+  width: 300px;
+  height: auto;
+  border-radius: 4px;
+}
+
+#home .imageB {
+  float: right;
+  margin: 10px 0 10px 20px;
+  max-width: 45%;
+  height: auto;
+  border-radius: 4px;;
+}
+
+/* NAVIGATION */
+
+#top {
+  border-bottom: 2px solid #84592B;
+}
+
+nav {
+  background-color: #EBD1A7;
+  color: #442D1C;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* HEADER & BANNERS */
+
+.banner {
+  position: relative;
+  background-size: cover;
+  background-position: center 60%;
+  height: 300px;
+  border-bottom: 2px solid #84592B;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  color: #442D1C;
+  text-align: center;
+  font-size: 2em;
+  font-family: Georgia, serif;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 0;
+}
+
+.banner h1 {
+  position: relative;
+  z-index: 1;
+  background: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* BANNER IMAGES */
+
+.louisiana {
+  background-image: url('images/louisianabanner.jpg');
+  background-position: center;
+}
+
+.batonrouge {
+  background-image: url('images/batonrougebanner.jpg');
+}
+
+.neworleans {
+  background-image: url('images/neworleansbanner.jpg');
+}
+
+.lafayette {
+  background-image: url('images/lafayettebanner.jpg');
+}
+
+/* SECTION */
+
+section {
+  padding: 20px;
+}
+
+section h3 {
+  position: relative;
+  left: 10px;
+}
+
+.city section {
+  width: 70%;
+  float: left;
+  padding: 20px;
+}
+
+/* ASIDE */
+
+aside {
+  background-color: #9D9167;
+  color: #442D1C;
+  padding: 15px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.aside-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-decoration: underline;
+}
+
+aside img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+aside table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+aside th {
+  text-align: left;
+  padding-bottom: 7px;
+}
+
+aside td {
+  text-align: center;
+}
+
+#home aside {
+  width: 100vw;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  clear: both;
+}
+
+.city aside {
+  width: 25%;
+  float: right;
+  padding: 20px;
+  border-left: 2px solid #84592B;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* FOOTER */
+
+.city footer {
+  clear: both;
+}
+
+footer small {
+  display: block;
+  padding: 20px;
+  max-width: 90%;
+}
+
+/* FORMS - CONTACT PAGE */
+
+form {
+  background-color: #EBD1A7;
+  padding: 20px;
+  border: 2px solid #84592B;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  margin: 20px auto;
+  font-size: 1em;
+}
+
+.form-heading {
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #442D1C;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #9D9167;
+  border-radius: 4px;
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #743014;
+  color: #EBD1A7;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #84592B;
+}
+
+.submit-button {
+  text-align: center;
+}
